@@ -30,13 +30,13 @@ body {
     border: 2px solid var(--second-color);
 }
 
-.signUp {
+.signUp ,.signOut {
     border: 2px solid var(--main-color);
     background-color: var(--main-color);
     color: var(--text-color);
 }
 
-.signUp:hover {
+.signUp ,.signOut:hover {
     color: var(--main-color);
     border: 2px solid var(--main-color);
 }
@@ -138,6 +138,10 @@ header {
     font-size: 14px;
 }
 
+.card .words {
+    flex-wrap: wrap;
+}
+
 .card .words li {
     font-size: 16px;
     font-weight: 400;
@@ -150,7 +154,7 @@ header {
 }
 
 button.add {
-    background: linear-gradient(to right, rgba(0, 151, 255, 1), rgba(0, 151, 255, 0.3));
+    background: linear-gradient(135deg, var(--main-color), rgba(0, 151, 255, 0.4));
     outline: none;
     padding: 20px;
     display: block;
@@ -172,17 +176,16 @@ button.add:hover {
     background-color: var(--main-color);
 }
 
-main .portfolio {
-    /* background-color: var(--second-color); */
+section .portfolio {
     color: var(--second-text-color);
     border: 2px solid var(--second-color);
 }
 
-main .portfolio .caver-container .caver {
+section .portfolio .caver-container .caver {
     height: 300px;
 }
 
-main .portfolio .caver-container .user {
+section .portfolio .caver-container .user {
     width: 160px;
     height: 160px;
     border: 5px solid var(--second-color);
@@ -190,20 +193,19 @@ main .portfolio .caver-container .user {
     right: 20px;
 }
 
-main .portfolio .text {
+section .portfolio .text {
     margin-top: 50px;
 }
 
-main .portfolio .text p {
+section .portfolio .text p {
     margin-bottom: 6px;
 }
 
-main .portfolio .text .follow {
+section .portfolio .text .follow {
     color: var(--second-text-color);
 }
 
 .portfolio-section .cards .card {
-    /* background-color: var(--main-color); */
     color: var(--second-text-color);
 }
 
@@ -214,13 +216,42 @@ main .portfolio .text .follow {
 .notifications {
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 2px 2px 5px #000;
-    color: var(--main-color);
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.notification:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.notification:hover {
+    background-color: rgba(0, 151, 255, 0.05);
+    cursor: pointer;
 }
 
 .notification .image {
-    width: 40px;
-    height: 40px;
-    padding: 3px;
+    width: 48px;
+    height: 48px;
+    padding: 2px;
     border: 2px dashed var(--main-color);
+    flex-shrink: 0;
+}
+
+.notification .text p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.notification .text span {
+    font-weight: bold;
+    color: var(--main-color);
 }

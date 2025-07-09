@@ -1,17 +1,19 @@
-const sections = ["home", "portfolio", "notifications", "message", "trips"];
-const navLinks = document.querySelectorAll(".nav-link");
-const sectionElements = sections.map(id => document.getElementById(id));
-
+// Elements
 const addPostBtn = document.getElementById("addPostBtn");
 const posts = document.getElementById("posts");
 const cards = document.getElementById("cards");
 const postTitle = document.getElementById("postTitle");
 const postDes = document.getElementById("postDes");
+const postKeyWords = document.getElementById("postKeyWords");
 const postImage = document.getElementById("postImage");
+const navLinks = document.querySelectorAll(".nav-link");
+const searchInput = document.getElementById("searchInput");
+
+const sections = ["home", "portfolio", "notifications", "message", "trips"];
+const sectionElements = sections.map(id => document.getElementById(id));
 let allPosts = JSON.parse(localStorage.getItem("posts")) || [];
-posts.innerHTML = "";
-cards.innerHTML = "";
 allPosts.forEach(post => addPost(post));
+// Navbar
 window.addEventListener("DOMContentLoaded", () => {
   let saved = localStorage.getItem("activeSection");
   showSection(sections.includes(saved) ? saved : "home");
@@ -42,6 +44,7 @@ addPostBtn.addEventListener("click", () => {
       let newPost = {
         title: postTitle.value,
         description: postDes.value,
+        keyWords: postKeyWords.value.split(",").map(tag => tag.trim()).filter(tag => tag),
         image: e.target.result
       };
       allPosts.push(newPost);
@@ -54,6 +57,7 @@ addPostBtn.addEventListener("click", () => {
     let newPost = {
       title: postTitle.value,
       description: postDes.value,
+      keyWords: postKeyWords.value.split(",").map(tag => tag.trim()).filter(tag => tag),
       image: "public/imgs/img2.jfif"
     };
     allPosts.push(newPost);
@@ -83,11 +87,7 @@ function addPost(post) {
         <h5>${post.title}</h5>
         <p>${post.description}</p>
         <ul class="words d-flex align-items-center">
-          <li>لبلابلا</li>
-          <li>لبلابلا</li>
-          <li>لبلابلا</li>
-          <li>لبلابلا</li>
-          <li>لبلابلا</li>
+          ${post.keyWords?.map(tag => `<li>${tag}</li>`).join("") || ""}
         </ul>
         <div class="hr my-3"></div>
         <div class="d-flex gap-2 justify-content-between px-3">
@@ -105,14 +105,15 @@ function addPost(post) {
         </div>
       </div>
     </div>
-    `;
-  posts.innerHTML += cont
-  cards.innerHTML += cont
+  `;
+  posts.innerHTML += cont;
+  cards.innerHTML += cont;
 }
 function clearForm() {
   postTitle.value = "";
   postDes.value = "";
   postImage.value = "";
+  postKeyWords.value = "";
 }
 
 posts.addEventListener("click", function (e) {
@@ -128,3 +129,14 @@ posts.addEventListener("click", function (e) {
   }
 });
 
+searchInput.addEventListener("input", function () {
+  let keyword = this.value.trim().toLowerCase();
+  posts.innerHTML = "";
+  cards.innerHTML = "";
+
+  let filteredPosts = allPosts.filter(post => {
+    return post.keyWords.some(tag => tag.toLowerCase().includes(keyword));
+  });
+
+  filteredPosts.forEach(post => addPost(post));
+});
