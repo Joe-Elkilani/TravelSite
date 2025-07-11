@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="shadow hide" id="shadow">
+        <div class="addmesage">
+            <span onclick="hidingsendingmsg()">x</span>
+            <div class="personsentmessage">
+                <h3>ادخل الشخض الذي تريد ارسال اليه الرساله:</h3>
+                <select name="" id="nameselect">
+                    <option value="محمد">أحمد</option>
+                    <option value="يوسف">يوسف</option>
+                    <option value="أنس">أنس</option>
+                    <option value="محمود">محمود</option>
+                </select>
+            </div>
+            <div class="messagecontentsent">
+                <h3>ادخل محتويات الرساله:</h3>
+                <textarea name="" id="contentselect"></textarea>
+            </div>
+            <button class="sendthemsg" onclick="sendmsg()">ارسل الرساله</button>
+        </div>
+    </div>
+    <div class="addedmessageicon" onclick="showingsendingmsg()">
+        <span>+</span>
+    </div>
+    <div class="messages" id="messages">
+        <div class="message" id="message" onclick="showingcontent(this)">
+            <img src="../imgs/personphoto.avif" class="personphoto" alt="">
+            <h1> أنس</h1>
+            <img src="../imgs/greenarrow-removebg-preview.png" class="incomearrow" alt="">
+            <small id="havebeenread">رساله جديده(2)</small>
+            <span>منذ 5 دقائق</span>
+            <img src="../imgs/dots.png" class="downicon" onclick="notficationinfo()" alt="">
+            <div class="notficationinfo hide" id="notficationinfo">
+                <ul>
+                    <li onclick="read(havebeenread)">قُرِئت</li>
+                    <li>عرض الحساب</li>
+                    <li onclick="deletemsg(message)">مسح الرساله</li>
+                    <li onclick="block(message)">حظر</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<div class="notficationinfoplus hide" id="notficationinfoplus">
+    <ul>
+        <li onclick="deletemsgplus(hidingspecialdiv , notficationinfoplus)">مسح الرساله</li>
+    </ul>
+</div>
+    <script src="js.js"></script>
+</body>
+</html>
