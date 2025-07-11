@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- BootStrap Css Rtl -->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Media File -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Title -->
+    <title>السياحه</title>
+    <!-- css file -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body class="pb-5">
+    <header>
+        <nav id="navbar" class="navbar py-2 rounded-3 shadow-lg w-100 fixed-top navbar-expand-lg">
+            <div class="container px-3">
+                <a class="navbar-brand fs-2 fw-bold" href="#">السياحه</a>
+                <form role="search">
+                    <input class="form-control me-2" type="search" placeholder="البحث" aria-label="Search">
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link act fw-normal px-4 py-2 mx-1" aria-current="page" id="homelink" data-target="home"><i class="fa-solid fa-house fs-3"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1" id="portfoliolink" data-target="portfolio"><i class="fa-solid fa-user-group fs-3"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1" id="noticeslink" data-target="notifications"><i class="fa-solid fa-bell fs-3"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1" id="messagelink" data-target="message"><i class="fa-solid fa-comment-dots fs-3"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1" id="tripslink" data-target="trips"><i class="fa-solid fa-plane-up fs-3"></i></a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-3">
+                    <button class="btn logIn" type="submit">تسجيل الدخول</button>
+                    <button class="btn signUp" type="submit">انشاء حساب</button>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="home mt-5" id="home">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12">
+                    <div id="posts">
+                        <div class="card rounded-4 shadow">
+                            <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                    <div>
+                                        <h4>يوسف</h4>
+                                        <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fs-4 fa-xmark"></i>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="card-body">
+                                <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                <h5>.أبجد هوز  حطى</h5>
+                                <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex gap-2 justify-content-between px-3">
+                                    <div class="d-flex gap-2">
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                            <span>تعليقات(4)</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-link"></i>
+                                            <span>مشاركه(4)</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span>اعجاب(4) 👍</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex align-items-center justify-content-between px-3">
+                                    <div>
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        <span>اعجاب</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>تعليق</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-link"></i>
+                                        <span>مشاركه</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-4 shadow mt-5">
+                            <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                    <div>
+                                        <h4>محمد</h4>
+                                        <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fs-4 fa-xmark"></i>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="card-body">
+                                <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                <h5>.أبجد هوز  حطى</h5>
+                                <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex gap-2 justify-content-between px-3">
+                                    <div class="d-flex gap-2">
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                            <span>تعليقات(4)</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-link"></i>
+                                            <span>مشاركه(4)</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span>اعجاب(4) 👍</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex align-items-center justify-content-between px-3">
+                                    <div>
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        <span>اعجاب</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>تعليق</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-link"></i>
+                                        <span>مشاركه</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-4 shadow mt-5">
+                            <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                    <div>
+                                        <h4>يوسف</h4>
+                                        <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fs-4 fa-xmark"></i>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="card-body">
+                                <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                <h5>.أبجد هوز  حطى</h5>
+                                <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex gap-2 justify-content-between px-3">
+                                    <div class="d-flex gap-2">
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                            <span>تعليقات(4)</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-link"></i>
+                                            <span>مشاركه(4)</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span>اعجاب(4) 👍</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex align-items-center justify-content-between px-3">
+                                    <div>
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        <span>اعجاب</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>تعليق</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-link"></i>
+                                        <span>مشاركه</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card rounded-4 shadow mt-5">
+                            <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                    <div>
+                                        <h4>محمد</h4>
+                                        <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fs-4 fa-xmark"></i>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="card-body">
+                                <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                <h5>.أبجد هوز  حطى</h5>
+                                <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex gap-2 justify-content-between px-3">
+                                    <div class="d-flex gap-2">
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                            <span>تعليقات(4)</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid mx-2 fa-link"></i>
+                                            <span>مشاركه(4)</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span>اعجاب(4) 👍</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr my-3"></div>
+                                <div class="d-flex align-items-center justify-content-between px-3">
+                                    <div>
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        <span>اعجاب</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>تعليق</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-link"></i>
+                                        <span>مشاركه</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main id="portfolio" class="portfolio-section mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12">
+                    <div class="portfolio overflow-hidden rounded-4">
+                        <div class="caver-container pb-2 position-relative">
+                            <img src="public/imgs/img1.jfif" class="w-100 caver" alt="Caver Img">
+                            <img src="public/imgs/user.webp" class="rounded-circle user position-absolute" alt="User Img">
+                        </div>
+                        <div class="text ps-2 pb-2">
+                            <h3 class="text-white fs-1 fw-semibold">يوسف احمد</h3>
+                            <p class="text-white fs-6">.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، جدًا إجراء قطع سلس عبث </p>
+                            <p class="text-white opacity-75">المنوفيه مصر</p>
+                            <p class="follow">المشتركين 100 . الاصدقاءة 1002</p>
+                        </div>
+                    </div>
+                    <div id="posts" class="posts px-3 pt-3 pb-4 rounded-4 mt-4">
+                        <h3 class="text-white my-3">منشوراتي</h3>
+                        <div class="cards flex-wrap d-flex">
+                            <div class="card w-100 rounded-4 shadow mt-5">
+                                <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                        <div>
+                                            <h4>يوسف</h4>
+                                            <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fs-4 fa-xmark"></i>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="card-body">
+                                    <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                    <h5>.أبجد هوز  حطى</h5>
+                                    <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex gap-2 justify-content-between px-3">
+                                        <div class="d-flex gap-2">
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                                <span>تعليقات(4)</span>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-link"></i>
+                                                <span>مشاركه(4)</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <span>اعجاب(4) 👍</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex align-items-center justify-content-between px-3">
+                                        <div>
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            <span>اعجاب</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-comment"></i>
+                                            <span>تعليق</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-link"></i>
+                                            <span>مشاركه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card w-100 rounded-4 shadow mt-5">
+                                <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                        <div>
+                                            <h4>يوسف</h4>
+                                            <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fs-4 fa-xmark"></i>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="card-body">
+                                    <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                    <h5>.أبجد هوز  حطى</h5>
+                                    <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex gap-2 justify-content-between px-3">
+                                        <div class="d-flex gap-2">
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                                <span>تعليقات(4)</span>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-link"></i>
+                                                <span>مشاركه(4)</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <span>اعجاب(4) 👍</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex align-items-center justify-content-between px-3">
+                                        <div>
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            <span>اعجاب</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-comment"></i>
+                                            <span>تعليق</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-link"></i>
+                                            <span>مشاركه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card w-100 rounded-4 shadow mt-5">
+                                <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                        <div>
+                                            <h4>يوسف</h4>
+                                            <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fs-4 fa-xmark"></i>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="card-body">
+                                    <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                    <h5>.أبجد هوز  حطى</h5>
+                                    <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex gap-2 justify-content-between px-3">
+                                        <div class="d-flex gap-2">
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                                <span>تعليقات(4)</span>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-link"></i>
+                                                <span>مشاركه(4)</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <span>اعجاب(4) 👍</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex align-items-center justify-content-between px-3">
+                                        <div>
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            <span>اعجاب</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-comment"></i>
+                                            <span>تعليق</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-link"></i>
+                                            <span>مشاركه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card w-100 rounded-4 shadow mt-5">
+                                <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
+                                        <div>
+                                            <h4>يوسف</h4>
+                                            <h6 class="opacity-75 ">منذ10 دقائق</h6>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fs-4 fa-xmark"></i>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="card-body">
+                                    <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
+                                    <h5>.أبجد هوز  حطى</h5>
+                                    <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex gap-2 justify-content-between px-3">
+                                        <div class="d-flex gap-2">
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-pen-clip"></i>
+                                                <span>تعليقات(4)</span>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid mx-2 fa-link"></i>
+                                                <span>مشاركه(4)</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <span>اعجاب(4) 👍</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr my-3"></div>
+                                    <div class="d-flex align-items-center justify-content-between px-3">
+                                        <div>
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            <span>اعجاب</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-comment"></i>
+                                            <span>تعليق</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-link"></i>
+                                            <span>مشاركه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main id="notifications" class="mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12">
+                    <div class="notifications">
+                        <div class="notification p-3 d-flex align-items-center gap-3">
+                            <div class="image rounded-circle overflow-hidden">
+                                <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
+                            </div>
+                            <div class="text">
+                                <p><span>نشر يوسف: </span> .أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="notification mb-3 p-3 d-flex align-items-center gap-3">
+                            <div class="image rounded-circle overflow-hidden">
+                                <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
+                            </div>
+                            <div class="text">
+                                <p><span>عليق محمد: </span> .أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="notification mb-3 p-3 d-flex align-items-center gap-3">
+                            <div class="image rounded-circle overflow-hidden">
+                                <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
+                            </div>
+                            <div class="text">
+                                <p><span>عليق يوسف: </span> .أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="notification mb-3 p-3 d-flex align-items-center gap-3">
+                            <div class="image rounded-circle overflow-hidden">
+                                <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
+                            </div>
+                            <div class="text">
+                                <p><span>نشر محمد: </span> .أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>            
+    </main>
+    <main id="message">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12">
+                    
+                </div>
+            </div>
+        </div>            
+    </main>
+    <main id="trips">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12">
+                </div>
+            </div>
+        </div>            
+    </main>
+    <!-- BootStrap Js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

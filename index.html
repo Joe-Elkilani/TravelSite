@@ -36,7 +36,7 @@
                         <a class="nav-link act fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" aria-current="page" id="homelink" data-target="home"><i class="fa-solid fa-house fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرئيسية</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio"><i class="fa-solid fa-user-group fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الملف الشخصي</h3></a>
+                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio"><i class="fa-solid fa-user-group fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الهويه</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="noticeslink" data-target="notifications"><i class="fa-solid fa-bell fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الاشعارات</h3></a>
@@ -389,13 +389,75 @@
     </section>
     <!-- My Trips Section -->
     <section id="trips">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <div class="col-lg-8 col-md-12">
+        <div class="overlay hide" id="shadow"></div>
+        <div class="addingtravelpart hide" id="addingtravelpart">
+            <div class="tripname">
+                <h2>اسم الرحله</h2>
+                <input type="text" id="nameofthetrip">
+            </div>
+            <div class="tripdate">
+                <h2> ميعاد الرحله</h2>
+                <input type="date" name="" id="dateofthetrip">
+            </div>
+            <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
+            <span onclick="hidingaddingtravells()">X</span>
+        </div>
+        <div class="travels" id="travels">
+            <div class="traveladd" id="traveladd" onclick="showingaddingtravells()">
+                <h2>أضف رحله</h2>
+                <div class="plus">
+                    <span>+</span>
                 </div>
             </div>
-        </div>            
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+        </div>          
     </section>
+    <!-- Jquery -->
+    <script src="assets/js/jquery.js"></script>
     <!-- BootStrap Js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Main Scripts -->
