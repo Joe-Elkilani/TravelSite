@@ -124,7 +124,7 @@
 
     <!-- Header Section -->
     <header>
-        <nav id="navbar" class="navbar py-2 rounded-3 shadow-lg w-100 fixed-top navbar-expand-lg">
+        <nav id="navbar" class="navbar py-2 shadow-lg w-100 fixed-top navbar-expand-lg">
             <div class="container px-3">
                 <a class="navbar-brand fs-2 fw-bold" href="#">سواح</a>
                 <form role="search">
@@ -295,7 +295,7 @@
     </section>
     <!-- Messages Section -->
     <section id="message" class="min-vh-100 pt-5">
-        <div class="overlay hide" id="overlay">
+        <div class="overlay hide" id="overlaymessage">
             <div class="addmesage">
                 <span onclick="hidingsendingmsg()">x</span>
                 <div class="personsentmessage">
@@ -317,47 +317,43 @@
         <div class="addedmessageicon" onclick="showingsendingmsg()">
             <span>+</span>
         </div>
-        <div class="messages" id="messages">
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> أنس</h1>
-                <small>رساله جديده(2)</small>
-                <span>منذ 5 دقائق</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
+        <div class="containe">
+            <div class="messages" id="messages">
+                <div class="message" id="message" onclick="showingcontent(this)">
+                    <div class="shadowmsg"></div>
+                    <div class="notficationinfo hide" id="notficationinfopart">
+                        <ul>
+                            <li onclick="read(havebeenread)">قُرِئت</li>
+                            <li>عرض الحساب</li>
+                            <li onclick="deletemsg(message)">مسح الرساله</li>
+                            <li onclick="block(message)">حظر</li>
+                        </ul>
+                    </div>
+                    <img src="public/imgs/user.webp" class="personphoto" alt="">
+                    <h1> أنس</h1>
+                    <i class="fa-solid fa-arrow-left incomearrow"></i>
+                    <small id="havebeenread">رساله جديده(2)</small>
+                    <span>منذ 5 دقائق</span>
+                    <i class="fa-solid fa-ellipsis-vertical downicon" onclick="notficationinfo(notficationinfopart)"></i>
+                </div>
             </div>
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> أحمد</h1>
-                <small>رساله جديده</small>
-                <span>منذ 15 دقائق</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> محمد</h1>
-                <small style="background-color: rgba(255, 122, 122, 0.434); color: rgb(131, 63, 63);"> تمت قرائتها</small>
-                <span>منذ 55 دقائق</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> يوسف</h1>
-                <small style="background-color: rgba(255, 122, 122, 0.434); color: rgb(131, 63, 63);"> تمت قرائتها(5)</small>
-                <span>منذ 5 ساعات</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-        </div>          
+        </div>
+        <div class="notficationinfoplus hide" id="1">
+            <ul>
+                <li onclick="deletemsgplus(this.id)">مسح الرساله</li>
+            </ul>
+        </div>    
     </section>
     <!-- My Trips Section -->
     <section id="trips" class="pt-5 min-vh-100 trips">
-        <div class="overlay hide" id="shadow"></div>
+        <div class="shadow hide" id="over"></div>
         <div class="addingtravelpart hide" id="addingtravelpart">
             <div class="tripname">
-                <h2 class="text-dark">اسم الرحله</h2>
+                <h2>اسم الرحله</h2>
                 <input type="text" id="nameofthetrip">
             </div>
             <div class="tripdate">
-                <h2 class="text-dark"> ميعاد الرحله</h2>
+                <h2> ميعاد الرحله</h2>
                 <input type="date" name="" id="dateofthetrip">
             </div>
             <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
@@ -365,17 +361,57 @@
         </div>
         <div class="travels" id="travels">
             <div class="traveladd" id="traveladd" onclick="showingaddingtravells()">
-                <h2 class="text-dark">أضف رحله</h2>
+                <h2>أضف رحله</h2>
                 <div class="plus">
-                    <span class="text-dark">+</span>
+                    <span>+</span>
                 </div>
             </div>
             <div class="travel">
                 <img src="public/imgs/pyamidsimg" alt="">
-                <h1 class="text-dark">أهرامات الجيزه  </h1>
+                <h1>أهرامات الجيزه  </h1>
                 <p>موعد الرحله (22-6-2023)</p>
             </div>
-        </div>          
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+            <div class="travel">
+                <img src="public/imgs/pyamidsimg" alt="">
+                <h1>أهرامات الجيزه  </h1>
+                <p>موعد الرحله (22-6-2023)</p>
+            </div>
+        </div>        
     </section>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
