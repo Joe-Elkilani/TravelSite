@@ -2,6 +2,7 @@ let shadow=document.getElementById("shadow")
 let addingtravelpart=document.getElementById("addingtravelpart")
 let nameofthetrip=document.getElementById("nameofthetrip")
 let dateofthetrip=document.getElementById("dateofthetrip")
+let traveladd=document.getElementById("traveladd")
 let travels=document.getElementById("travels")
 function showingaddingtravells(){
     shadow.classList.remove("hide")
@@ -12,6 +13,8 @@ function hidingaddingtravells(){
     addingtravelpart.classList.add("hide")
 }
 function addingtravells(){
+    var traveladdcopy=traveladd.cloneNode(true)
+    traveladd.remove()
     shadow.classList.add("hide")
     addingtravelpart.classList.add("hide")
     var namesofthenewtrip=nameofthetrip.value
@@ -27,5 +30,6 @@ function addingtravells(){
     addingdiv.appendChild(h1namesofthenewtrip)
     addingdiv.appendChild(pdatesofthenewtrip)
     addingdiv.classList.add("travel")
-    travels.appendChild(addingdiv)
+    travels.prepend(addingdiv)
+    travels.prepend(traveladdcopy)
 }

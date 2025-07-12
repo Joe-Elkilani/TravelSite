@@ -184,13 +184,13 @@
     z-index: 30;
 }
 .notficationinfoplus{
-    position: absolute;
+    position: relative;
     height: 30px;
     width: 100px;
     background-color: white;
     border: 1px solid grey;
-    left: -50px;
-    top: 30px;
+    left: -1150px;
+    top: 0px;
     z-index: 30;
 }
 .notficationinfo ul , .notficationinfoplus ul{
@@ -220,17 +220,15 @@
     justify-content: center;
     position: relative;
     top: 16px;
-    background-color:rgb(201, 60, 60);
+    background-color:rgb(255, 60, 60);
     color:white;
 }
 .notficationinfo li:nth-child(4){
     border-bottom:none;
-    background-color:rgb(201, 60, 60);
-    color:white;
+    color:rgb(255, 60, 60);
 }
 .notficationinfo li:nth-child(3){
-    background-color:rgb(201, 60, 60);
-    color: white;
+    color: rgb(255, 60, 60);
 }
 .greencolor{
     color: green;
@@ -244,4 +242,15 @@
 .blocked *{
     color: grey !important;
     text-decoration: line-through;
+}
+.shadowmsg{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+}
+.notficationinfopluscopy{
+    margin-bottom: 30px;
 }

@@ -34,13 +34,8 @@
     </div>
     <div class="messages" id="messages">
         <div class="message" id="message" onclick="showingcontent(this)">
-            <img src="../imgs/personphoto.avif" class="personphoto" alt="">
-            <h1> أنس</h1>
-            <img src="../imgs/greenarrow-removebg-preview.png" class="incomearrow" alt="">
-            <small id="havebeenread">رساله جديده(2)</small>
-            <span>منذ 5 دقائق</span>
-            <img src="../imgs/dots.png" class="downicon" onclick="notficationinfo()" alt="">
-            <div class="notficationinfo hide" id="notficationinfo">
+            <div class="shadowmsg"></div>
+            <div class="notficationinfo hide" id="notficationinfopart">
                 <ul>
                     <li onclick="read(havebeenread)">قُرِئت</li>
                     <li>عرض الحساب</li>
@@ -48,11 +43,17 @@
                     <li onclick="block(message)">حظر</li>
                 </ul>
             </div>
+            <img src="../imgs/personphoto.avif" class="personphoto" alt="">
+            <h1> أنس</h1>
+            <img src="../imgs/greenarrow-removebg-preview.png" class="incomearrow" alt="">
+            <small id="havebeenread">رساله جديده(2)</small>
+            <span>منذ 5 دقائق</span>
+            <img src="../imgs/dots.png" class="downicon" onclick="notficationinfo(notficationinfopart)" alt="">
         </div>
     </div>
-<div class="notficationinfoplus hide" id="notficationinfoplus">
+<div class="notficationinfoplus hide" id="1">
     <ul>
-        <li onclick="deletemsgplus(hidingspecialdiv , notficationinfoplus)">مسح الرساله</li>
+        <li onclick="deletemsgplus(this.id)">مسح الرساله</li>
     </ul>
 </div>
     <script src="js.js"></script>
