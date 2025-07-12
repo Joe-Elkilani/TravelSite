@@ -55,6 +55,7 @@ header {
 
 .nav-link {
     border-bottom: 3px solid transparent;
+    cursor: pointer;
 }
 
 .nav-link i {
@@ -113,6 +114,14 @@ header {
     width: 105px;
 }
 
+section {
+    background: url(../../public/imgs/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
 .home .card {
     color: var(--second-text-color);
 }
@@ -145,12 +154,22 @@ header {
 .card .words li {
     font-size: 16px;
     font-weight: 400;
-    background: gray;
-    color: #fff !important;
-    padding: 5px 15px;
-    border-radius: 30px;
-    margin-inline: 7px;
-    margin-bottom: 0;
+    color: #0097ff !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card i.more {
+    padding: 9px 15px;
+    transition: background 500ms;
+}
+
+.card i.more:hover {
+    background: #ddd;
+}
+
+.hashtags {
+    cursor: pointer;
 }
 
 button.add {
@@ -178,6 +197,7 @@ button.add:hover {
 
 section .portfolio {
     color: var(--second-text-color);
+    background: var(--text-color);
     border: 2px solid var(--second-color);
 }
 
@@ -199,6 +219,16 @@ section .portfolio .text {
 
 section .portfolio .text p {
     margin-bottom: 6px;
+}
+
+.portfolio-section .edit {
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: var(--main-color);
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 section .portfolio .text .follow {
@@ -256,13 +286,146 @@ section .portfolio .text .follow {
     color: var(--main-color);
 }
 
+/* Messages */
+
+.messages{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.message{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    margin-left: 35px;
+    direction: rtl;
+    overflow: hidden;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:0 0 10px 1px rgba(128, 128, 128, 0.228);
+}
+.message .personphoto{
+    height:40px;
+    position: relative;
+    right: 20px;
+    width: 40px;
+    border-radius: 50%;
+}
+.message h1{
+    color: #0097ff;
+    font-size: 16px;
+}
+.message small{
+    height: 20px;
+    background-color: #00ff1571;
+    color: #00940c;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.message span{
+    position: absolute;
+    left: 150px;
+    top: 40px;
+    font-size: 11px;
+    color: grey;
+}
+.message .downicon{
+    margin-left: 50px;
+    width: 20px;
+    cursor: pointer;
+    height: 20px;
+}
+.addedmessageicon{
+    position:absolute;
+    top: 5px;
+    left: 60px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px dashed black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.addedmessageicon span{
+    margin-top: 10px;
+}
+
+.addmesage{
+    height:400px;
+    width: 400px;
+    background-color: white;
+    border-radius:10px;
+    position: relative;
+}
+.addmesage span{
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-family: sans-serif;
+    color: red;
+    cursor: pointer;
+}
+.personsentmessage{
+    position: relative;
+    right: 25px;
+    top: 60px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 380px;
+}
+.personsentmessage select{
+    width: 90%;
+}
+.messagecontentsent{
+    height: 380px;
+    width: 380px;
+    position: relative;
+    right: 25px;
+    top: 100px;
+}
+.messagecontentsent textarea{
+    width: 90%;
+    height: 100px;
+}
+.sendthemsg{
+    position: absolute;
+    top: 330px;
+    height: 40px;
+    width: 345px;
+    right: 25px;
+    background-color: #0097ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+.sendthemsg:hover{
+    background-color: #30acff;
+}
+.hide{
+    display: none;
+}
+
 /* Trips */
+.trips {
+    background: url(../../public/imgs/background2.jpg);
+}
 .travel{
     width: 300px;
     height: 300px;
-    box-shadow: 0 0 10px 1px grey;
     border-radius: 10px;
     position: relative;
+    background: var(--main-color);
 }
 .travel img{
     width: 250px;
@@ -307,12 +470,13 @@ section .portfolio .text .follow {
     height: 300px;
     width: 300px;
     border-radius: 20px;
-    border: 3px dashed black;
+    border: 3px dashed var(--second-text-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background: var(--main-color);
 }
 .traveladd h2{
     width: 300px;

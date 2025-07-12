@@ -19,52 +19,12 @@
     <title>سواح</title>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav id="navbar" class="navbar py-2 rounded-3 shadow-lg w-100 fixed-top navbar-expand-lg">
-            <div class="container px-3">
-                <a class="navbar-brand fs-2 fw-bold" href="#">سواح</a>
-                <form role="search">
-                    <input class="form-control me-2" type="search" placeholder="البحث" id="searchInput" aria-label="Search">
-                </form>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav m-auto d-flex align-items-center mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link act fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" aria-current="page" id="homelink" data-target="home"><i class="fa-solid fa-house fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرئيسية</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio"><i class="fa-solid fa-user-group fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الهويه</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="noticeslink" data-target="notifications"><i class="fa-solid fa-bell fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الاشعارات</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="messagelink" data-target="message"><i class="fa-solid fa-comment-dots fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرسائل</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="tripslink" data-target="trips"><i class="fa-solid fa-plane-up fs-3"></i><h3 class="fs-6 fw-light text-center m-1">رحلتي</h3></a>
-                    </li>
-                </ul>
-                <div class="d-flex gap-3">
-                    <button class="btn signOut" type="submit">تسجيل الخروج</button>
-                    <!-- <button class="btn logIn" type="submit">تسجيل الدخول</button> -->
-                    <!-- <button class="btn signUp" type="submit">انشاء حساب</button> -->
-                </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- Home Section -->
-    <section class="home mt-5" id="home">
-        <button type="button" class="position-fixed border-0 add text-white rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-solid fa-pen"></i></button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Add Post Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">انشاء منشور جديد</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">انشاء منشور جديد : </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -82,6 +42,7 @@
                         <input type="text" class="form-control" placeholder="الكلمه مفصوله بفصله(,)" id="postKeyWords">
                     </div>
                     <div class="mb-3">
+                        <label for="postImage" class="col-form-label">صوره المنشور: </label>
                         <input type="file" class="form-control" id="postImage">
                     </div>
                 </form>
@@ -91,196 +52,150 @@
             </div>
             </div>
         </div>
+    </div>
+    <!-- Edit Post modal -->
+    <div class="modal fade" id="editpost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">تعديل المنشور : </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="newPostTitle" class="col-form-label">:العنوان الجديد</label>
+                        <input type="text" class="form-control" id="newPostTitle">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPostDes" class="col-form-label">الوصف الجديد : </label>
+                        <input type="text" class="form-control" id="newPostDes">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postKeyWords" class="col-form-label">كلمه مفتاحيه: </label>
+                        <input type="text" class="form-control" placeholder="الكلمه مفصوله بفصله(,)" id="postKeyWords">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPostImage" class="col-form-label">صوره المنشور الجديده: </label>
+                        <input type="file" class="form-control" id="newPostImage">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary">تعديل</button>
+            </div>
+            </div>
         </div>
+    </div>
+    <!-- Edit Portfolio Modal -->
+    <div class="modal fade" id="editportfolio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">تعديل الملف الشخصي : </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">:الاسم</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutMe" class="col-form-label">عني : </label>
+                        <input type="text" class="form-control" id="aboutMe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userImg" class="col-form-label">الصوره الشخصيه: </label>
+                        <input type="file" class="form-control" id="userImg">
+                    </div>
+                    <div class="mb-3">
+                        <label for="coverimg" class="col-form-label">صور الهامش</label>
+                        <input type="file" class="form-control" id="coverimg">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary">تعديل</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar" class="navbar py-2 rounded-3 shadow-lg w-100 fixed-top navbar-expand-lg">
+            <div class="container px-3">
+                <a class="navbar-brand fs-2 fw-bold" href="#">سواح</a>
+                <form role="search">
+                    <input class="form-control me-2" type="search" placeholder="البحث" id="searchInput" aria-label="Search">
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto d-flex align-items-center mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link act fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" aria-current="page" id="homelink" data-target="home" title="الرئيسية"><i class="fa-solid fa-house fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرئيسية</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio" title="الهويه"><i class="fa-solid fa-user-group fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الهويه</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="noticeslink" data-target="notifications" title="الاشعارات"><i class="fa-solid fa-bell fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الاشعارات</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="messagelink" data-target="message" title="الرسائل"><i class="fa-solid fa-comment-dots fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرسائل</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="tripslink" data-target="trips" title="رحلتي"><i class="fa-solid fa-plane-up fs-3"></i><h3 class="fs-6 fw-light text-center m-1">رحلتي</h3></a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-3">
+                    <button class="btn signOut" type="submit">تسجيل الخروج</button>
+                    <!-- <button class="btn logIn" type="submit">تسجيل الدخول</button> -->
+                    <!-- <button class="btn signUp" type="submit">انشاء حساب</button> -->
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Home Section -->
+    <section class="home pt-5" id="home">
+        <button type="button" class="position-fixed border-0 add text-white rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-solid fa-pen"></i></button>
         <div class="container">
             <div class="d-flex justify-content-center">
                 <div class="col-lg-5 col-md-12">
-                    <div id="posts">
-                        <div class="card w-100 mb-4 rounded-4 shadow">
-                            <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center gap-2">
-                                <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
-                                <div>
-                                    <h4>يوسف</h4>
-                                    <h6 class="opacity-75 ">منذ لحظات</h6>
-                                </div>
-                                </div>
-                                <div>
-                                <i class="fa-solid fs-4 fa-xmark"></i>
-                                </div>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="card-body">
-                                <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
-                                <h5>.أبجد هوز  حطى</h5>
-                                <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، من الصعب</p>
-                                <ul class="words d-flex align-items-center">
-                                <li>.أبجد</li>
-                                <li>.أبجد</li>
-                                <li>.أبجد</li>
-                                <li>.أبجد</li>
-                                </ul>
-                                <div class="hr my-3"></div>
-                                <div class="d-flex gap-2 justify-content-between px-3">
-                                <div class="d-flex gap-2">
-                                    <div><i class="fa-solid mx-2 fa-pen-clip"></i><span>تعليقات(4)</span></div>
-                                    <div><i class="fa-solid mx-2 fa-link"></i><span>مشاركه(4)</span></div>
-                                </div>
-                                <div><span>اعجاب(4) 👍</span></div>
-                                </div>
-                                <div class="hr my-3"></div>
-                                <div class="d-flex align-items-center justify-content-between px-3">
-                                <div><i class="fa-solid fa-thumbs-up"></i><span>اعجاب</span></div>
-                                <div><i class="fa-solid fa-comment"></i><span>تعليق</span></div>
-                                <div><i class="fa-solid fa-link"></i><span>مشاركه</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card w-100 mb-4 rounded-4 shadow">
-                            <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center gap-2">
-                                <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
-                                <div>
-                                    <h4>محمد</h4>
-                                    <h6 class="opacity-75 ">منذ لحظات</h6>
-                                </div>
-                                </div>
-                                <div>
-                                <i class="fa-solid fs-4 fa-xmark"></i>
-                                </div>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="card-body">
-                                <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
-                                <h5>.أبجد هوز  حطى</h5>
-                                <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، من الصعب</p>
-                                <ul class="words d-flex align-items-center">
-                                <li>.أبجد</li>
-                                <li>.أبجد</li>
-                                <li>.أبجد</li>
-                                <li>.أبجد</li>
-                                </ul>
-                                <div class="hr my-3"></div>
-                                <div class="d-flex gap-2 justify-content-between px-3">
-                                <div class="d-flex gap-2">
-                                    <div><i class="fa-solid mx-2 fa-pen-clip"></i><span>تعليقات(4)</span></div>
-                                    <div><i class="fa-solid mx-2 fa-link"></i><span>مشاركه(4)</span></div>
-                                </div>
-                                <div><span>اعجاب(4) 👍</span></div>
-                                </div>
-                                <div class="hr my-3"></div>
-                                <div class="d-flex align-items-center justify-content-between px-3">
-                                <div><i class="fa-solid fa-thumbs-up"></i><span>اعجاب</span></div>
-                                <div><i class="fa-solid fa-comment"></i><span>تعليق</span></div>
-                                <div><i class="fa-solid fa-link"></i><span>مشاركه</span></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="posts" class="d-flex flex-column-reverse">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--Portfolio Section -->
-    <section id="portfolio" class="portfolio-section mt-5">
+    <section id="portfolio" class="portfolio-section pt-5">
+        <!-- <button type="button" class="position-fixed border-0 add text-white rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#editportfolio" data-bs-whatever="@mdo"><i class="fa-solid fa-pen"></i></button> -->
         <div class="container">
             <div class="d-flex justify-content-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="portfolio overflow-hidden rounded-4">
-                        <div class="caver-container pb-2 position-relative">
+                        <div class="caver-container pb-1 position-relative">
                             <img src="public/imgs/img1.jfif" class="w-100 caver" alt="Caver Img">
                             <img src="public/imgs/user.webp" class="rounded-circle user position-absolute" alt="User Img">
                         </div>
-                        <div class="text ps-2 pb-2">
-                            <h3 class="fs-1 fw-semibold">يوسف احمد</h3>
-                            <p class="fs-6">.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، جدًا إجراء قطع سلس عبث </p>
-                            <p class="opacity-75">المنوفيه مصر</p>
-                            <p class="follow">المشتركين 100 . الاصدقاءة 1002</p>
+                        <div class="text d-flex ps-2 pb-2">
+                            <div class="">
+                                <h3 class="fs-1 fw-semibold">يوسف احمد</h3>
+                                <p class="fs-6">.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، جدًا إجراء قطع سلس عبث </p>
+                                <p class="opacity-75">المنوفيه مصر</p>
+                                <p class="follow">المشتركين 3000 . الاصدقاءة 200</p>
+                            </div>
+                            <button title="Edit" type="button" data-bs-toggle="modal" data-bs-target="#editportfolio" data-bs-whatever="@mdo" class="border-0 edit text-white rounded-circle"><i class="fa-solid fa-pen"></i></button>
                         </div>
                     </div>
                     <div class="posts px-3 pt-3 pb-4 rounded-4 mt-1">
-                        <h3 class="text-dark my-3">منشوراتي</h3>
-                        <div id="cards" class="cards">
-                            <div class="card w-100 mb-4 rounded-4 shadow">
-                                <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center gap-2">
-                                    <img class="rounded-circle p-1" src="public/imgs/user.webp" alt="User Img">
-                                    <div>
-                                        <h4>يوسف</h4>
-                                        <h6 class="opacity-75 ">منذ لحظات</h6>
-                                    </div>
-                                    </div>
-                                    <div>
-                                    <i class="fa-solid fs-4 fa-xmark"></i>
-                                    </div>
-                                </div>
-                                <div class="hr"></div>
-                                <div class="card-body">
-                                    <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
-                                    <h5>.أبجد هوز  حطى</h5>
-                                    <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، من الصعب</p>
-                                    <ul class="words d-flex align-items-center">
-                                    <li>.أبجد</li>
-                                    <li>.أبجد</li>
-                                    <li>.أبجد</li>
-                                    <li>.أبجد</li>
-                                    </ul>
-                                    <div class="hr my-3"></div>
-                                    <div class="d-flex gap-2 justify-content-between px-3">
-                                    <div class="d-flex gap-2">
-                                        <div><i class="fa-solid mx-2 fa-pen-clip"></i><span>تعليقات(4)</span></div>
-                                        <div><i class="fa-solid mx-2 fa-link"></i><span>مشاركه(4)</span></div>
-                                    </div>
-                                    <div><span>اعجاب(4) 👍</span></div>
-                                    </div>
-                                    <div class="hr my-3"></div>
-                                    <div class="d-flex align-items-center justify-content-between px-3">
-                                    <div><i class="fa-solid fa-thumbs-up"></i><span>اعجاب</span></div>
-                                    <div><i class="fa-solid fa-comment"></i><span>تعليق</span></div>
-                                    <div><i class="fa-solid fa-link"></i><span>مشاركه</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card w-100 mb-4 rounded-4 shadow">
-                                <div class="card-header pe-4 border-0 d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center gap-2">
-                                    <img class="rounded-circle p-1" src="public/imgs/user2.png" alt="User Img">
-                                    <div>
-                                        <h4>محمد</h4>
-                                        <h6 class="opacity-75 ">منذ لحظات</h6>
-                                    </div>
-                                    </div>
-                                    <div>
-                                    <i class="fa-solid fs-4 fa-xmark"></i>
-                                    </div>
-                                </div>
-                                <div class="hr"></div>
-                                <div class="card-body">
-                                    <img class="w-100 mb-3" src="public/imgs/img1.jfif" alt="Post img">
-                                    <h5>.أبجد هوز  حطى</h5>
-                                    <p>.أبجد هوز حطى كلمن هوى ، إجراءات المراقبة المعززة. التوازن ، الاحتياجات الأكبر لرفض المتعة ، من الصعب</p>
-                                    <ul class="words d-flex align-items-center">
-                                    <li>.أبجد</li>
-                                    <li>.أبجد</li>
-                                    <li>.أبجد</li>
-                                    <li>.أبجد</li>
-                                    </ul>
-                                    <div class="hr my-3"></div>
-                                    <div class="d-flex gap-2 justify-content-between px-3">
-                                    <div class="d-flex gap-2">
-                                        <div><i class="fa-solid mx-2 fa-pen-clip"></i><span>تعليقات(4)</span></div>
-                                        <div><i class="fa-solid mx-2 fa-link"></i><span>مشاركه(4)</span></div>
-                                    </div>
-                                    <div><span>اعجاب(4) 👍</span></div>
-                                    </div>
-                                    <div class="hr my-3"></div>
-                                    <div class="d-flex align-items-center justify-content-between px-3">
-                                    <div><i class="fa-solid fa-thumbs-up"></i><span>اعجاب</span></div>
-                                    <div><i class="fa-solid fa-comment"></i><span>تعليق</span></div>
-                                    <div><i class="fa-solid fa-link"></i><span>مشاركه</span></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <h3 class="text-dark fw-bolder my-3">منشوراتي : </h3>
+                        <div id="cards" class="cards d-flex flex-column-reverse">
                         </div>
                     </div>
                 </div>
@@ -288,7 +203,7 @@
         </div>
     </section>
     <!-- Notifications Section -->
-    <section id="notifications" class="mt-5">
+    <section id="notifications" class="pt-5">
         <div class="container">
             <div class="d-flex justify-content-center">
             <div class="col-lg-8 col-md-12">
@@ -306,7 +221,7 @@
                     <img src="public/imgs/user2.png" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق محمد:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق محمد:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -314,7 +229,7 @@
                     <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -330,7 +245,7 @@
                     <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -338,7 +253,7 @@
                     <img src="public/imgs/user2.png" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق محمد:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق محمد:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -346,7 +261,7 @@
                     <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -354,7 +269,7 @@
                     <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -362,7 +277,7 @@
                     <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 <div class="notification p-3 d-flex align-items-center gap-3">
@@ -370,7 +285,7 @@
                     <img src="public/imgs/user.webp" class="w-100 rounded-circle h-100" alt="User Image">
                     </div>
                     <div class="text">
-                    <p class="text-dark"><span>عليق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
+                    <p class="text-dark"><span>علق يوسف:</span> أبجد هوز حطى كلمن هوى، إجراءات المراقبة المعززة. التوازن، الاحتياجات.</p>
                     </div>
                 </div>
                 </div>
@@ -379,24 +294,70 @@
         </div>
     </section>
     <!-- Messages Section -->
-    <section id="message">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <div class="col-lg-8 col-md-12">
+    <section id="message" class="min-vh-100 pt-5">
+        <div class="overlay hide" id="overlay">
+            <div class="addmesage">
+                <span onclick="hidingsendingmsg()">x</span>
+                <div class="personsentmessage">
+                    <h3>ادخل الشخض الذي تريد ارسال اليه الرساله:</h3>
+                    <select name="" id="nameselect">
+                        <option value="محمد">أحمد</option>
+                        <option value="يوسف">يوسف</option>
+                        <option value="أنس">أنس</option>
+                        <option value="محمود">محمود</option>
+                    </select>
                 </div>
+                <div class="messagecontentsent">
+                    <h3>ادخل محتويات الرساله:</h3>
+                    <textarea name="" id="contentselect"></textarea>
+                </div>
+                <button class="sendthemsg" onclick="sendmsg()">ارسل الرساله</button>
             </div>
-        </div>            
+        </div>
+        <div class="addedmessageicon" onclick="showingsendingmsg()">
+            <span>+</span>
+        </div>
+        <div class="messages" id="messages">
+            <div class="message">
+                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
+                <h1> أنس</h1>
+                <small>رساله جديده(2)</small>
+                <span>منذ 5 دقائق</span>
+                <img src="public/imgs/dots.png" class="downicon" alt="">
+            </div>
+            <div class="message">
+                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
+                <h1> أحمد</h1>
+                <small>رساله جديده</small>
+                <span>منذ 15 دقائق</span>
+                <img src="public/imgs/dots.png" class="downicon" alt="">
+            </div>
+            <div class="message">
+                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
+                <h1> محمد</h1>
+                <small style="background-color: rgba(255, 122, 122, 0.434); color: rgb(131, 63, 63);"> تمت قرائتها</small>
+                <span>منذ 55 دقائق</span>
+                <img src="public/imgs/dots.png" class="downicon" alt="">
+            </div>
+            <div class="message">
+                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
+                <h1> يوسف</h1>
+                <small style="background-color: rgba(255, 122, 122, 0.434); color: rgb(131, 63, 63);"> تمت قرائتها(5)</small>
+                <span>منذ 5 ساعات</span>
+                <img src="public/imgs/dots.png" class="downicon" alt="">
+            </div>
+        </div>          
     </section>
     <!-- My Trips Section -->
-    <section id="trips">
+    <section id="trips" class="pt-5 min-vh-100 trips">
         <div class="overlay hide" id="shadow"></div>
         <div class="addingtravelpart hide" id="addingtravelpart">
             <div class="tripname">
-                <h2>اسم الرحله</h2>
+                <h2 class="text-dark">اسم الرحله</h2>
                 <input type="text" id="nameofthetrip">
             </div>
             <div class="tripdate">
-                <h2> ميعاد الرحله</h2>
+                <h2 class="text-dark"> ميعاد الرحله</h2>
                 <input type="date" name="" id="dateofthetrip">
             </div>
             <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
@@ -404,60 +365,20 @@
         </div>
         <div class="travels" id="travels">
             <div class="traveladd" id="traveladd" onclick="showingaddingtravells()">
-                <h2>أضف رحله</h2>
+                <h2 class="text-dark">أضف رحله</h2>
                 <div class="plus">
-                    <span>+</span>
+                    <span class="text-dark">+</span>
                 </div>
             </div>
             <div class="travel">
                 <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="" alt="">
-                <h1>أهرامات الجيزه  </h1>
-                <p>موعد الرحله (22-6-2023)</p>
-            </div>
-            <div class="travel">
-                <img src="public/imgs/pyamidsimg" alt="">
-                <h1>أهرامات الجيزه  </h1>
+                <h1 class="text-dark">أهرامات الجيزه  </h1>
                 <p>موعد الرحله (22-6-2023)</p>
             </div>
         </div>          
     </section>
     <!-- Jquery -->
-    <script src="assets/js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- BootStrap Js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Main Scripts -->

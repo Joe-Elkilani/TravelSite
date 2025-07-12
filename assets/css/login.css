@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background:url(../imgs/background2.jpg);
+    background:url("../../public/imgs/background2.jpg");
     background-size: 100% 100%;
 }
 .decore{
@@ -84,8 +84,7 @@ input:focus{
     font-size: 18px;
     padding: 4px 8px;
     border-radius: 5px;
-    border: 1px solid black;
-    color: #eba10f;
+    border: 1px solid;
     border-radius: 20px;
     background: transparent;
 }
