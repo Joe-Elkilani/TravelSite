@@ -69,7 +69,6 @@
                     </div>
                     <div class="mb-3">
                         <label for="postKeyWords" class="col-form-label">كلمه مفتاحيه: </label>
-                        <!-- <input type="text" class="form-control" placeholder="الكلمه مفصوله بفصله(,)" id="postKeyWords"> -->
                         <input type="text" class="form-control" placeholder="الكلمه مفصوله بفصله(,)" id="newPostKeyWords">
                     </div>
                     <div class="mb-3">
@@ -119,6 +118,72 @@
         </div>
     </div>
 
+    <!-- Add Travel Modal -->
+        <div class="modal fade" id="addtravel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">اضافه رحله : </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nameofthetrip" class="col-form-label">عنوان الرحله : </label>
+                            <input type="text" class="form-control" id="nameofthetrip">
+                        </div>
+                        <div class="mb-3">
+                            <label for="desofthetrip" class="col-form-label">وصف الرحله :</label>
+                            <input type="text" class="form-control" id="desofthetrip">
+                        </div>
+                        <div class="mb-3">
+                            <label for="dateofthetrip" class="col-form-label">ميعاد الرحله :</label>
+                            <input type="date" class="form-control" id="dateofthetrip">
+                        </div>
+                        <div class="mb-3">
+                            <label for="imgofthetrip" class="col-form-label">صوره للرحله : </label>
+                            <input type="file" class="form-control" id="imgofthetrip">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="confirmAddTrip" title="اضف رحله" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary">اضافه</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit travel modal -->
+    <div class="modal fade" id="edittravel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">تعديل الرحله : </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="newPostTitle" class="col-form-label">:العنوان الجديد</label>
+                        <input type="text" class="form-control" id="newTravelTitle">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPostDes" class="col-form-label">الوصف الجديد : </label>
+                        <input type="text" class="form-control" id="newTravelDes">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPostImage" class="col-form-label">صوره الرحله الجديده: </label>
+                        <input type="file" class="form-control" id="newTravelImage">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="confirmEditTravelBtn" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary">تعديل</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header>
         <nav id="navbar" class="navbar py-2 rounded-3 shadow-lg w-100 fixed-top navbar-expand-lg">
@@ -133,7 +198,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto d-flex align-items-center mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link act fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" aria-current="page" id="homelink" data-target="home" title="الرئيسية"><i class="fa-solid fa-house fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرئيسية</h3></a>
+                        <a class="nav-link act fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" aria-current="page" id="homelink" data-target="home" href="" title="الرئيسية"><i class="fa-solid fa-house fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرئيسية</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio" title="الهويه"><i class="fa-solid fa-circle-user fs-3"></i></i><h3 class="fs-6 fw-light text-center m-1">الهويه</h3></a>
@@ -383,46 +448,14 @@
         </div>          
     </section>
     <!-- My Trips Section -->
-    <section id="trips" class="pt-5 min-vh-100 trips">
-        <div class="overlayTrips hide" id="shadow"></div>
-        <div class="addingtravelpart hide" id="addingtravelpart">
-            <div class="tripname">
-                <h2 class="text-dark">اسم الرحله</h2>
-                <input type="text" id="nameofthetrip">
+    <section id="trips" class="trips pt-5 min-vh-100 trips">
+        <div class="container">
+            <div class="addtravel d-flex justify-content-end">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#addtravel" data-bs-whatever="@mdo" class="fs-2 fw-bold mb-3 rounded-circle d-flex justify-content-center align-items-center"><span>+</span></button>
             </div>
-            <div class="tripdate">
-                <h2 class="text-dark"> ميعاد الرحله</h2>
-                <input type="date" name="" id="dateofthetrip">
-            </div>
-            <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
-            <span onclick="hidingaddingtravells()">X</span>
-        </div>
-    <div class="overlayShadow hide" id="shadow"></div>
-    <div class="addingtravelpart hide" id="addingtravelpart">
-        <div class="tripname">
-            <h2>اسم الرحله</h2>
-            <input type="text" id="nameofthetrip">
-        </div>
-        <div class="tripdate">
-            <h2> ميعاد الرحله</h2>
-            <input type="date" name="" id="dateofthetrip">
-        </div>
-        <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
-        <span onclick="hidingaddingtravells()">X</span>
-    </div>
-    <div class="travels" id="travels">
-        <div class="traveladd" id="traveladd" onclick="showingaddingtravells()">
-            <h2>أضف رحله</h2>
-            <div class="plus">
-                <span>+</span>
+            <div class="row g-3">
             </div>
         </div>
-        <div class="travel">
-            <img src="../imgs/pyamidsimg" alt="" class="mainimg">
-            <h1>أهرامات الجيزه  </h1>
-            <p>موعد الرحله (22-6-2023)</p>
-        </div>
-    </div>      
     </section>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -430,7 +463,5 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Main Scripts -->
     <script src="assets/js/script.js"></script>
-    <!-- mohamed js code -->
-    <script src="mohamed codes/js.js"></script>
 </body>
 </html>
