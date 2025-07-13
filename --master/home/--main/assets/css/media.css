@@ -1,0 +1,9 @@
+@media (min-width: 1400px) {
+  .navbar .container {
+    max-width: 1400px;
+  }
+
+  .portfolio-section .cards .card {
+    width: 31%;
+  }
+}
