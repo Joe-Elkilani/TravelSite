@@ -20,6 +20,7 @@ const sectionElements = sections.map(id => document.getElementById(id));
 let allPosts = JSON.parse(localStorage.getItem("posts")) || [];
 
 let tripEditingIndex = null;
+let editingIndex = null;
 
 // =========================
 // Initial Rendering
@@ -66,6 +67,9 @@ function showSection(targetId) {
 // إضافة منشور جديد أو تعديل موجود
 // =========================
 addPostBtn.addEventListener("click", () => {
+  if (editingIndex !== null && !allPosts[editingIndex]) {
+    editingIndex = null;
+  }
   let file = postImage.files[0];
   const processPost = (image) => {
     const newPost = {
@@ -95,7 +99,7 @@ addPostBtn.addEventListener("click", () => {
     };
     reader.readAsDataURL(file);
   } else {
-    let image = editingIndex !== null ? allPosts[editingIndex].image : undefined;
+    let image = (editingIndex !== null && allPosts[editingIndex]) ? allPosts[editingIndex].image : undefined;
     processPost(image);
   }
 });

@@ -110,7 +110,7 @@ input:focus{
     transition: 0.1s;
     border: 2px dashed #0097ff;
 }
-button{
+form > a{
     color: white;
     background-color:#0097ff;
     border:none;
@@ -125,8 +125,9 @@ button{
     border-radius: 10px;
     transition: 0.3s;
     cursor: pointer;
+    text-decoration: none;
 }
-button:hover{
+form > a:hover{
     background-color:#5ebfff;
 }
 .alreadyhad{
