@@ -128,7 +128,7 @@
     <header>
         <nav id="navbar" class="navbar py-2 rounded-3 shadow-lg w-100 fixed-top navbar-expand-lg">
             <div class="container px-3">
-                <a class="navbar-brand fs-2 fw-bold" href="#">سواح</a>
+                <img src="public/imgs/ترافل-removebg-preview.png" class="navbar-brand mt-n1" alt="">
                 <form role="search">
                     <input class="form-control me-2" type="search" placeholder="البحث" id="searchInput" aria-label="Search">
                 </form>
@@ -141,7 +141,7 @@
                         <a class="nav-link act fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" aria-current="page" id="homelink" data-target="home" title="الرئيسية"><i class="fa-solid fa-house fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الرئيسية</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio" title="الهويه"><i class="fa-solid fa-user-group fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الهويه</h3></a>
+                        <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="portfoliolink" data-target="portfolio" title="الهويه"><i class="fa-solid fa-circle-user fs-3"></i></i><h3 class="fs-6 fw-light text-center m-1">الهويه</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-normal px-4 py-2 mx-1 d-flex flex-column align-items-center" id="noticeslink" data-target="notifications" title="الاشعارات"><i class="fa-solid fa-bell fs-3"></i><h3 class="fs-6 fw-light text-center m-1">الاشعارات</h3></a>
@@ -154,9 +154,9 @@
                     </li>
                 </ul>
                 <div class="d-flex gap-3">
-                    <button class="btn signOut" type="submit"><a class="white" href="../login/Index.html">تسجيل الخروج</a></button>
-                    <!-- <button class="btn logIn" type="submit">تسجيل الدخول</button> -->
-                    <!-- <button class="btn signUp" type="submit">انشاء حساب</button> -->
+                    <button class="btn signOut" type="submit"><a class="white" href="#" style="color: white; text-decoration: none;" onclick="Signout()">تسجيل الخروج</a></button>
+                    <!-- <button class="btn logIn" type="submit"><a class="white" href="login.html">تسجيل الدخول</a></button>
+                    <button class="btn signUp" type="submit"><a class="white" href="signup.html">انشاء حساب</a></button> -->
                 </div>
                 </div>
             </div>
@@ -297,7 +297,7 @@
     </section>
     <!-- Messages Section -->
     <section id="message" class="min-vh-100 pt-5">
-        <div class="shadow hide" id="shadowpro">
+        <div class="shadowpro hide" id="shadowpro">
                 <div class="addmesage">
                     <span onclick="hidingsendingmsg()">x</span>
                     <div class="personsentmessage">
@@ -340,51 +340,19 @@
             </div>
         <div class="notficationinfoplus hide" id="1">
             <ul>
-                <li onclick="deletemsgplus(message)">مسح الرساله</li>
+                <li onclick="deletemsgplus(messagewholeplus)">مسح الرساله</li>
             </ul>
         </div>        
     </section>
     <!-- My Trips Section -->
     <section id="trips" class="pt-5 min-vh-100 trips">
-        <div class="overlay hide" id="shadow"></div>
-        <div class="addingtravelpart hide" id="addingtravelpart">
-            <div class="tripname">
-                <h2 class="text-dark">اسم الرحله</h2>
-                <input type="text" id="nameofthetrip">
+        <div class="container">
+            <div class="addtravel d-flex justify-content-end">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#addtravel" data-bs-whatever="@mdo" class="fs-2 fw-bold mb-3 rounded-circle d-flex justify-content-center align-items-center"><span>+</span></button>
             </div>
-            <div class="tripdate">
-                <h2 class="text-dark"> ميعاد الرحله</h2>
-                <input type="date" name="" id="dateofthetrip">
-            </div>
-            <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
-            <span onclick="hidingaddingtravells()">X</span>
-        </div>
-    <div class="shadow hide" id="shadowmax"></div>
-    <div class="addingtravelpart hide" id="addingtravelpart">
-        <div class="tripname">
-            <h2>اسم الرحله</h2>
-            <input type="text" id="nameofthetrip">
-        </div>
-        <div class="tripdate">
-            <h2> ميعاد الرحله</h2>
-            <input type="date" name="" id="dateofthetrip">
-        </div>
-        <div class="addingtravel" onclick="addingtravells()">أضف رحله</div>
-        <span onclick="hidingaddingtravells()">X</span>
-    </div>
-    <div class="travels" id="travels">
-        <div class="traveladd" id="traveladd" onclick="showingaddingtravells()">
-            <h2>أضف رحله</h2>
-            <div class="plus">
-                <span>+</span>
+            <div class="row g-3">
             </div>
         </div>
-        <div class="travel">
-            <img src="../imgs/pyamidsimg" alt="" class="mainimg">
-            <h1>أهرامات الجيزه  </h1>
-            <p>موعد الرحله (22-6-2023)</p>
-        </div>
-    </div>      
     </section>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

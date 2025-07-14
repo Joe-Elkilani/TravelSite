@@ -11,151 +11,16 @@
 body{
     overflow-x: hidden;
 }
-.travel{
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    position: relative;
-    background-color: #0097ff;
-    border: 3px solid white;
-}
-.travel .mainimg{
-    width: 250px;
-    position: relative;
-    top: 20px;
-    right: 25px;
-    border-radius: 20px;
-}
-.travel h1{
-    position: relative;
-    right: 30px;
-    top: 30px;
-    font-size: 35px;
-}
-.travel p{
-    position: relative;
-    right: 30px;
-    top: 20px;
-    color: rgb(218, 218, 218);
-}
-.travel span{
-    background-color: brown;
-    color: rgb(255, 255, 255);
-    width: 100px;
-    height: 20px;
-    display: flex;
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -10px;
-    right: 180px;
-    scale: 0.8;
-}
-.travels{
-    display: grid;
-    order: reverse;
-    grid-template-columns:repeat(auto-fit, 300px);
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: center;
-}
-.traveladd{
-    height: 300px;
-    width: 300px;
-    border-radius: 20px;
-    border: 3px dashed black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.traveladd h2{
-    width: 300px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-}
-.traveladd .plus{
-    height:50px;
-    width:50px;
-    border: 3px dashed black;
-    margin-top: -130px;
-    border-radius: 50%;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.traveladd span{
-    margin-top: 8px;
-    margin-left: 2px;
-}
-.addingtravelpart{
-    height: 400px;
-    width: 400px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 25px 1px white;
-    position: fixed;
-    display: flex;
-    z-index: 100;
-    right: 400px;
-    top: 100px;
-    border: 1px solid grey;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.shadow{
+.shadowpro{
     z-index: 50;
     height: 105vh;
     width: 100%;
     top: -20px;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.463);
-}
-.tripname{
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    height: 30px;
-}
-.tripname input ,.tripdate input{
-    width: 150px;
-}
-.tripdate{
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    height: 30px;
-}
-.addingtravelpart .addingtravel{
-    width: 320px;
-    height: 40px;
-    font-size: 20px;
-    border: none;
-    border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0097ff;
-    color: white;
-    cursor: pointer;
-}
-.addingtravelpart span{
-    color: red;
-    font-size: 30px;
-    font-family: sans-serif;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-}
-.hide{
-    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.463);
 }
 .messages{
     display: flex;
@@ -228,17 +93,6 @@ body{
 .addedmessageicon span{
     margin-top: 10px;
     color: black;
-}
-.shadow{
-    height: 100vh;
-    width: 100%;
-    z-index: 50;
-    background-color: rgba(0, 0, 0, 0.595);
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    top: 0;
 }
 .addmesage{
     height:400px;

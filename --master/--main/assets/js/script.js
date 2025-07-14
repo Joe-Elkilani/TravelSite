@@ -213,3 +213,4 @@ $(document).on("click", ".edit-post", function () {
 $(document).on("click", ".edit-profile", function () {
   showSection("portfolio");
 });
+//travels
