@@ -1,56 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/signup.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إنشاء حساب</title>
+  <!-- خط El Messiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap RTL -->
+  <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css" />
+  <!-- CSS الخاص -->
+  <link rel="stylesheet" href="assets/css/signup.css" />
 </head>
 <body>
-    <form class="form">
-        <img src="../imgs/Decore.png" alt="" class="decore">
-        <div class="header">
-            <h1>انشاء حساب</h1>
+
+  <section class="d-flex justify-content-center align-items-center min-vh-100">
+    <form class="form bg-white shadow position-relative p-3">
+      <img src="public/imgs/Decore.png" alt="" class="decore opacity-25 position-absolute top-0 start-0 z-1" />
+
+      <div class="position-relative z-3">
+        <div class="text-center mb-3">
+          <h1 class="text-primary">انشاء حساب</h1>
         </div>
-        <div class="wholetalkingandinfogettingpart">
-            <div class="namesandusernamepartwhole">
-                <div class="usernamepart">
-                    <Label>اسم المستخدم</Label>
-                    <input type="text" placeholder="من فضلك ادخل اسم المستخدم">
-                </div>
-                <div class="namespart">
-                    <div class="firstnamepart">
-                        <Label>الاسم الأول</Label>
-                        <input type="text" placeholder="من فضلك ادخل الاسم الأول الخاص بك">
-                    </div>
-                    <div class="lastnamepasrt">
-                        <Label>الاسم الأخير</Label>
-                        <input type="text" placeholder="من فضلك ادخل الاسم الأخير الخاص بك">
-                    </div>
-                </div>
-            </div>
-            <div class="eamilandpasswordpartwhole">
-                <div class="emailpart">
-                    <Label>البريد الألكتروني</Label>
-                    <input type="email" placeholder="من فضلك ادخل البريد الألكتروني الخاص بك">
-                </div>
-                <div class="passwordpart">
-                    <Label>كلمة المرور</Label>
-                    <input type="password" placeholder="من فضلك ادخل كلمة المرور الخاص بك">
-                </div>
-                <div class="passwordconfirmationpart">
-                    <Label>تأكيد كلمة المرور</Label>
-                    <input type="password" placeholder="من فضلك اعد كتابة كلمة المرور الخاص بك">
-                </div>
-            </div>
-            <div class="alreadyhad">
-                <label>لديك حساب بالفعل ؟<a href="login.html">تسجيل الدخول</a></label>
-            </div>
+
+        <div class="mb-2">
+          <label for="username" class="form-label">اسم المستخدم</label>
+          <input type="text" id="username" name="username" class="form-control rounded-pill bg-transparent border-dark"
+            placeholder="من فضلك ادخل اسم المستخدم" />
         </div>
-        <a href="index.html">انشاء حساب</a>
+        <div class="mb-2">
+          <label for="firstName" class="form-label">الاسم الاول</label>
+          <input type="text" id="firstName" name="firstName" class="form-control rounded-pill bg-transparent border-dark"
+            placeholder="من فضلك ادخل الاسم الاول" />
+        </div>
+        <div class="mb-2">
+          <label for="lastName" class="form-label">الاسم الاخير</label>
+          <input type="text" id="lastName" name="lastName" class="form-control rounded-pill bg-transparent border-dark"
+            placeholder="من فضلك ادخل الاسم اللاخير" />
+        </div>
+
+        <div class="mb-2">
+          <label for="useremail" class="form-label">البريد الإلكتروني</label>
+          <input type="email" id="useremail" name="useremail" class="form-control text-start rounded-pill bg-transparent border-dark"
+            placeholder="من فضلك ادخل البريد الإلكتروني" />
+        </div>
+
+        <div class="mb-2">
+          <label for="userpassword" class="form-label">كلمة المرور</label>
+          <input type="password" id="userpassword" name="userpassword" class="form-control rounded-pill bg-transparent border-dark"
+            placeholder="من فضلك ادخل كلمة المرور" />
+        </div>
+        <div class="mb-2">
+          <label for="reuserpassword" class="form-label">تاكيد كلمة المرور</label>
+          <input type="password" id="reuserpassword" name="reuserpassword" class="form-control rounded-pill bg-transparent border-dark"
+            placeholder="من فضلك ادخل تاكيد كلمة المرور" />
+        </div>
+
+        <button type="button" id="loginbtn" onclick="signup()" class="border-0 text-white w-100">
+          تسجيل الدخول
+        </button>
+
+        <div id="alertBox" class="mt-3"></div>
+
+        <div class="alreadyhad text-center mt-3">
+          <span>ليس لديك حساب؟ <a href="login.html" class="text-black">انشاء حساب</a></span>
+        </div>
+      </div>
     </form>
+  </section>
+
+  <script src="assets/js/signup.js"></script>
 </body>
 </html>

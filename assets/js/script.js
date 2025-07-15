@@ -18,9 +18,15 @@ const newPostKeyWords = document.getElementById("newPostKeyWords");
 const sections = ["home", "portfolio", "notifications", "message", "trips"];
 const sectionElements = sections.map(id => document.getElementById(id));
 let allPosts = JSON.parse(localStorage.getItem("posts")) || [];
+let currentUser = localStorage.getItem("loggedInUser");
 
 let tripEditingIndex = null;
 let editingIndex = null;
+
+if (!currentUser) {
+  alert("يجب تسجيل الدخول أولاً");
+  window.location.href = "login.html";
+}
 
 // =========================
 // Initial Rendering
@@ -401,5 +407,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
+// logOut
+function logout() {
+  const confirmed = confirm("هل أنت متأكد أنك تريد تسجيل الخروج؟");
+  if (confirmed) {
+    localStorage.removeItem("loggedInUser");
+    alert("تم تسجيل الخروج");
+    window.location.href = "login.html";
+  }
+}

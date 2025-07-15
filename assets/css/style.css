@@ -470,8 +470,8 @@ section .portfolio .text .follow {
 
 /* Trips */
 .trips .addtravel button {
-    border: 3px dashed var(--text-color);
-    color: var(--text-color);
+    border: 3px dashed var(--main-color);
+    color: var(--main-color);
     background: transparent;
     width: 70px;
     height: 70px;
