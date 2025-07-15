@@ -234,29 +234,46 @@ $(document).on("click", ".edit-post", function () {
 $(document).on("click", ".edit-profile", function () {
   showSection("portfolio");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const confirmEditBtn = document.getElementById("confirmEditBtn");
+  const modalEl = document.getElementById("editpost");
 
-document.getElementById("confirmEditBtn").addEventListener("click", () => {
-  if (editingIndex !== null) {
-    let updatedPost = {
-      title: newPostTitle.value,
-      description: newPostDes.value,
-      keyWords: newPostKeyWords.value.split(",").map(tag => tag.trim()).filter(tag => tag),
-      image: allPosts[editingIndex].image,
-      date: allPosts[editingIndex].date
-    };
-    let file = newPostImage.files[0];
-    if (file) {
-      let reader = new FileReader();
-      reader.onload = function (e) {
-        updatedPost.image = e.target.result;
-        applyEdit(updatedPost);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      applyEdit(updatedPost);
-    }
+  if (confirmEditBtn) {
+    confirmEditBtn.addEventListener("click", () => {
+      if (editingIndex !== null && allPosts[editingIndex]) {
+        let updatedPost = {
+          title: newPostTitle.value,
+          description: newPostDes.value,
+          keyWords: newPostKeyWords.value.split(",").map(tag => tag.trim()).filter(tag => tag),
+          image: allPosts[editingIndex].image,
+          date: allPosts[editingIndex].date
+        };
+
+        let file = newPostImage.files[0];
+        if (file) {
+          let reader = new FileReader();
+          reader.onload = function (e) {
+            updatedPost.image = e.target.result;
+            applyEdit(updatedPost);
+          };
+          reader.readAsDataURL(file);
+        } else {
+          applyEdit(updatedPost);
+        }
+
+        // إغلاق المودال إذا موجود
+        if (modalEl) {
+          const modalInstance = bootstrap.Modal.getInstance(modalEl);
+          if (modalInstance) {
+            modalInstance.hide();
+          }
+        }
+      }
+    });
   }
 });
+
+
 
 function applyEdit(postData) {
   if (editingIndex !== null) {
