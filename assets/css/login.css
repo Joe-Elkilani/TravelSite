@@ -1,47 +1,124 @@
-* {
-  font-family: "El Messiri", sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+*{
+    font-family:"El Messiri";
+    direction: rtl;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
-body {
-  background: url(../../public/imgs/background2.jpg) no-repeat center center fixed;
-  background-size: cover;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:url(../../public/imgs/background2.jpg);
+    background-size: 100% 100%;
 }
-
-.form {
-  border-radius: 2rem;
-  transition: 0.3s;
-  width: 450px;
+.decore{
+    position: absolute;
+    height: 350px;
+    opacity: 0.3;
+    border-top-right-radius: 43px;
 }
-
-input::placeholder {
-  font-size: 15px;
+.form{
+    width: 480px;
+    height: 380px;
+    background-color: rgb(255, 255, 255);
+    border-radius:48px;
+    transition: 0.3s;
 }
-
-input:focus {
-  border: 2px dashed #0097ff !important;
-  outline: none;
+.wholetalkingandinfogettingpart{
+    margin-top: -50px;
+    scale: 0.85;
 }
-
+.usernamepart{
+    font-size: 18px;
+    position: relative;
+    right: 40px;
+    display: flex;
+    flex-wrap: wrap;   
+    top: 50px;
+    width: 400px;
+    gap: 10px;  
+    color: black;
+}
+.namesandusernamepartwhole input{
+    width: 550px;
+    height: 35px;
+    font-size: 15px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 20px;
+}
+input::placeholder{
+    font-size: 15px;
+}
+input:focus{
+    outline: none;
+    transition: 0.1s;
+    border: 2px dashed #0097ff;
+}
+.header{
+    position: relative;
+    display: flex;
+    top: 20px;
+    color: #0097ff;
+    justify-self: center;
+}
+.eamilandpasswordpartwhole{
+    font-size: 19px;
+    position: relative;
+    right: 40px;
+    display: flex;
+    flex-wrap: wrap;   
+    top: 75px;
+    width: 400px;
+    gap: 15px;  
+    color: black;
+}
+.eamilandpasswordpartwhole input{
+    width: 400px;
+    height: 38px;
+    font-size: 18px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: transparent;
+}
+.eamilandpasswordpartwhole input:focus{
+    outline: none;
+    transition: 0.1s;
+    border: 2px dashed #0097ff;
+}
 button{
+    color: white;
     background-color:#0097ff;
+    border:none;
+    width: 350px;
     height: 40px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    top: 40px;
+    position: relative;
     border-radius: 10px;
-    transition: background 0.3s;
+    transition: 0.3s;
     cursor: pointer;
 }
-
-button:hover {
-  background:#5ebfff;
+button:hover{
+    background-color:#5ebfff;
 }
-
-.decore {
-  height: 350px;
-  border-top-right-radius: 43px;
+.alreadyhad{
+    display: flex;
+    justify-self: center;
+    position: relative;
+    top: 150px;
+    font-size: 15px;
 }
-
-.alreadyhad {
-  font-size: 0.9rem;
+.alreadyhad a{
+    color: rgb(0, 0, 0);
 }
