@@ -213,3 +213,132 @@ $(document).on("click", ".edit-post", function () {
 $(document).on("click", ".edit-profile", function () {
   showSection("portfolio");
 });
+//travels
+document.addEventListener("DOMContentLoaded", function () {
+  const tripsRow = document.querySelector("#trips .row");
+  const addBtn = document.getElementById("confirmAddTrip");
+  const nameInput = document.getElementById("nameofthetrip");
+  const descInput = document.getElementById("desofthetrip");
+  const dateInput = document.getElementById("dateofthetrip");
+  const imgInput = document.getElementById("imgofthetrip");
+
+  const newTravelTitle = document.getElementById("newTravelTitle");
+  const newTravelDes = document.getElementById("newTravelDes");
+  const newTravelImage = document.getElementById("newTravelImage");
+  const confirmEditTravelBtn = document.getElementById("confirmEditTravelBtn");
+
+  let trips = JSON.parse(localStorage.getItem("trips")) || [];
+  let tripEditingIndex = null;
+
+  function renderAllTrips() {
+    tripsRow.innerHTML = "";
+    trips.forEach((trip, index) => {
+      const tripCard = document.createElement("div");
+      tripCard.className = "col-lg-3";
+      tripCard.innerHTML = `
+        <div class="inner rounded-4 p-4 travel">
+          <div class="image rounded-4 overflow-hidden">
+            <img src="${trip.img}" class="h-100 w-100" alt="">
+          </div>
+          <div class="mt-3 d-flex justify-content-between">
+            <div class="text">
+              <h3 class="fs-4">${trip.name}</h3>
+              <p class="fs-6">وصف الرحله : ${trip.desc}</p>
+              <p class="fs-6">ميعاد الرحله : ${trip.date}</p>
+            </div>
+            <div class="dropdown">
+              <i class="fa-solid more rounded-circle fa-ellipsis-vertical" data-bs-toggle="dropdown"></i>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item edit-trip" data-index="${index}" data-bs-toggle="modal" data-bs-target="#edittravel">تعديل</a></li>
+                <li><a class="dropdown-item text-danger delete-trip" data-index="${index}" href="#">حذف</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+      tripsRow.appendChild(tripCard);
+    });
+  }
+
+  renderAllTrips();
+
+  addBtn.addEventListener("click", function () {
+    const name = nameInput.value.trim();
+    const desc = descInput.value.trim();
+    const date = dateInput.value.trim();
+    const file = imgInput.files[0];
+
+    if (!name || !desc || !date || !file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const newTrip = {
+        name,
+        desc,
+        date,
+        img: e.target.result
+      };
+
+      trips.unshift(newTrip);
+      localStorage.setItem("trips", JSON.stringify(trips));
+      renderAllTrips();
+
+      nameInput.value = "";
+      descInput.value = "";
+      dateInput.value = "";
+      imgInput.value = "";
+
+      bootstrap.Modal.getInstance(document.getElementById("addtravel")).hide();
+    };
+    reader.readAsDataURL(file);
+  });
+
+  tripsRow.addEventListener("click", function (e) {
+    if (e.target.classList.contains("delete-trip")) {
+      e.preventDefault();
+      const index = e.target.dataset.index;
+      if (confirm("هل تريد حذف هذه الرحلة؟")) {
+        trips.splice(index, 1);
+        localStorage.setItem("trips", JSON.stringify(trips));
+        renderAllTrips();
+      }
+    }
+
+    if (e.target.classList.contains("edit-trip")) {
+      e.preventDefault();
+      tripEditingIndex = +e.target.dataset.index;
+      const trip = trips[tripEditingIndex];
+
+      newTravelTitle.value = trip.name;
+      newTravelDes.value = trip.desc;
+      newTravelImage.value = "";
+    }
+  });
+
+  confirmEditTravelBtn.addEventListener("click", function () {
+    if (tripEditingIndex === null) return;
+
+    trips[tripEditingIndex].name = newTravelTitle.value.trim();
+    trips[tripEditingIndex].desc = newTravelDes.value.trim();
+
+    const file = newTravelImage.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        trips[tripEditingIndex].img = e.target.result;
+        saveTrips();
+      };
+      reader.readAsDataURL(file);
+    } else {
+      saveTrips();
+    }
+
+    bootstrap.Modal.getInstance(document.getElementById("edittravel")).hide();
+  });
+
+  function saveTrips() {
+    localStorage.setItem("trips", JSON.stringify(trips));
+    renderAllTrips();
+    tripEditingIndex = null;
+  }
+});
