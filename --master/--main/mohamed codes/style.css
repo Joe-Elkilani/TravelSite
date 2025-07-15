@@ -38,6 +38,7 @@ body{
     border-radius: 5px;
     box-shadow:0 0 10px 1px rgba(128, 128, 128, 0.228);
     background-color: #0097ff;
+    margin-right: 20px;
 }
 .message .personphoto{
     height:40px;
@@ -162,7 +163,7 @@ body{
 }
 .h1newmsg{
     position: absolute;
-    right: 360px;
+    right: 400px;
 }
 .incomearrow{
     position: absolute;
@@ -267,4 +268,9 @@ body{
 }
 .notficationinfopluscopy{
     margin-bottom: 30px;
+}
+.contentmessage{
+    position: absolute;
+    top: 70px;
+    right: 20px;
 }

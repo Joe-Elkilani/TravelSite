@@ -1,5 +1,6 @@
 let shadowpro = document.getElementById("shadowpro")
 let contentselect = document.getElementById("contentselect")
+let contentmessage=document.getElementById("contentmessage")
 let nameselect = document.getElementById("nameselect")
 let messages = document.getElementById("messages")
 let notficationinfoplus = document.getElementById("1")
@@ -19,10 +20,18 @@ function notficationinfoplusmore() {
 function sendmsg() {
     shadowpro.classList.add("hide")
     var namenewmsg = document.createElement("h1")
+    var shadowmsg=document.createElement("div")
+    var contentnewmsg=document.createElement("h3")
     var arrownewimg = document.createElement("img")
     arrownewimg.setAttribute("src", "../imgs/greenarrow-removebg-preview.png")
     arrownewimg.classList.add("outcomearrow")
     namenewmsg.innerHTML = nameselect.options[nameselect.selectedIndex].text;
+    contentnewmsg.innerHTML =contentselect.value;
+    contentnewmsg.classList.add("contentmessage")
+    contentnewmsg.classList.add("hide")
+    contentnewmsg.setAttribute("id" , "contentmessageplus")
+    shadowmsg.classList.add("shadowmsg")
+    shadowmsg.setAttribute("onclick" , "showingcontent(messagewholeplus , contentmessageplus)")
     var imgnewmsg = document.createElement("img")
     imgnewmsg.setAttribute("src", "../imgs/personphoto.avif")
     imgnewmsg.classList.add("personphoto")
@@ -35,6 +44,8 @@ function sendmsg() {
     namenewmsg.classList.add("h1newmsg")
     message.setAttribute("id", "messagewholeplus")
     message.appendChild(imgnewmsg)
+    message.appendChild(shadowmsg)
+    message.appendChild(contentnewmsg)
     message.appendChild(arrownewimg)
     message.appendChild(namenewmsg)
     message.appendChild(dotsnewmsg)
@@ -57,12 +68,16 @@ function block(messagewhole) {
     messagewhole.classList.toggle("blocked")
     document.getElementById('notficationinfopart').classList.toggle("hide")
 }
-function showingcontent(messagewhole) {
+function showingcontent(messagewhole , contentmessageplus) {
     if (messagewhole.style.height == "130px") {
         messagewhole.style.height = "60px"
+        contentmessage.classList.add("hide")
+        contentmessageplus.classList.add("hide")
     }
     else {
         messagewhole.style.height = "130px"
+        contentmessage.classList.remove("hide")
+        contentmessageplus.classList.remove("hide")
     }
 }
 function Signout(){
@@ -71,132 +86,3 @@ function Signout(){
         window.location.href="../login/index.html"
     }
 }
-//travel
-document.addEventListener("DOMContentLoaded", function () {
-  const tripsRow = document.querySelector("#trips .row");
-  const addBtn = document.getElementById("confirmAddTrip");
-  const nameInput = document.getElementById("nameofthetrip");
-  const descInput = document.getElementById("desofthetrip");
-  const dateInput = document.getElementById("dateofthetrip");
-  const imgInput = document.getElementById("imgofthetrip");
-
-  const newTravelTitle = document.getElementById("newTravelTitle");
-  const newTravelDes = document.getElementById("newTravelDes");
-  const newTravelImage = document.getElementById("newTravelImage");
-  const confirmEditTravelBtn = document.getElementById("confirmEditTravelBtn");
-
-  let trips = JSON.parse(localStorage.getItem("trips")) || [];
-  let tripEditingIndex = null;
-
-  function renderAllTrips() {
-    tripsRow.innerHTML = "";
-    trips.forEach((trip, index) => {
-      const tripCard = document.createElement("div");
-      tripCard.className = "col-lg-3";
-      tripCard.innerHTML = `
-        <div class="inner rounded-4 p-4 travel">
-          <div class="image rounded-4 overflow-hidden">
-            <img src="${trip.img}" class="h-100 w-100" alt="">
-          </div>
-          <div class="mt-3 d-flex justify-content-between">
-            <div class="text">
-              <h3 class="fs-4">${trip.name}</h3>
-              <p class="fs-6">وصف الرحله : ${trip.desc}</p>
-              <p class="fs-6">ميعاد الرحله : ${trip.date}</p>
-            </div>
-            <div class="dropdown">
-              <i class="fa-solid more rounded-circle fa-ellipsis-vertical" data-bs-toggle="dropdown"></i>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item edit-trip" data-index="${index}" data-bs-toggle="modal" data-bs-target="#edittravel">تعديل</a></li>
-                <li><a class="dropdown-item text-danger delete-trip" data-index="${index}" href="#">حذف</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      `;
-      tripsRow.appendChild(tripCard);
-    });
-  }
-
-  renderAllTrips();
-
-  addBtn.addEventListener("click", function () {
-    const name = nameInput.value.trim();
-    const desc = descInput.value.trim();
-    const date = dateInput.value.trim();
-    const file = imgInput.files[0];
-
-    if (!name || !desc || !date || !file) return;
-
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const newTrip = {
-        name,
-        desc,
-        date,
-        img: e.target.result
-      };
-
-      trips.unshift(newTrip);
-      localStorage.setItem("trips", JSON.stringify(trips));
-      renderAllTrips();
-
-      nameInput.value = "";
-      descInput.value = "";
-      dateInput.value = "";
-      imgInput.value = "";
-
-      bootstrap.Modal.getInstance(document.getElementById("addtravel")).hide();
-    };
-    reader.readAsDataURL(file);
-  });
-
-  tripsRow.addEventListener("click", function (e) {
-    if (e.target.classList.contains("delete-trip")) {
-      e.preventDefault();
-      const index = e.target.dataset.index;
-      if (confirm("هل تريد حذف هذه الرحلة؟")) {
-        trips.splice(index, 1);
-        localStorage.setItem("trips", JSON.stringify(trips));
-        renderAllTrips();
-      }
-    }
-
-    if (e.target.classList.contains("edit-trip")) {
-      e.preventDefault();
-      tripEditingIndex = +e.target.dataset.index;
-      const trip = trips[tripEditingIndex];
-
-      newTravelTitle.value = trip.name;
-      newTravelDes.value = trip.desc;
-      newTravelImage.value = "";
-    }
-  });
-
-  confirmEditTravelBtn.addEventListener("click", function () {
-    if (tripEditingIndex === null) return;
-
-    trips[tripEditingIndex].name = newTravelTitle.value.trim();
-    trips[tripEditingIndex].desc = newTravelDes.value.trim();
-
-    const file = newTravelImage.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        trips[tripEditingIndex].img = e.target.result;
-        saveTrips();
-      };
-      reader.readAsDataURL(file);
-    } else {
-      saveTrips();
-    }
-
-    bootstrap.Modal.getInstance(document.getElementById("edittravel")).hide();
-  });
-
-  function saveTrips() {
-    localStorage.setItem("trips", JSON.stringify(trips));
-    renderAllTrips();
-    tripEditingIndex = null;
-  }
-});

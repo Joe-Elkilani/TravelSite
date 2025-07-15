@@ -19,24 +19,25 @@
             <div class="namesandusernamepartwhole">
                 <div class="usernamepart">
                     <Label>اسم المستخدم</Label>
-                    <input type="text" placeholder="من فضلك ادخل اسم المستخدم">
+                    <input id="nameinput" type="text" placeholder="من فضلك ادخل اسم المستخدم">
                 </div>
             </div>
             <div class="eamilandpasswordpartwhole">
                 <div class="emailpart">
                     <Label>البريد الألكتروني</Label>
-                    <input type="text" placeholder="من فضلك ادخل البريد الألكتروني الخاص بك">
+                    <input id="emailinput" type="text" placeholder="من فضلك ادخل البريد الألكتروني الخاص بك">
                 </div>
                 <div class="passwordpart">
                     <Label>كلمة المرور</Label>
-                    <input type="text" placeholder="من فضلك ادخل كلمة المرور الخاص بك">
+                    <input id="passwordinput" type="text" placeholder="من فضلك ادخل كلمة المرور الخاص بك">
                 </div>
             </div>
             <div class="alreadyhad">
                 <label>ليس لديك حساب؟<a href="../sign in page/Index.html">انشاء حساب</a></label>
             </div>
         </div>
-        <button>تسجيل الدخول</button>
+        <button id="loginbtn" onclick="loggingin()">تسجيل الدخول</button>
     </div>
+    <script src="js.js"></script>
 </body>
 </html>
