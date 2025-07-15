@@ -394,7 +394,7 @@
     </section>
     <!-- Messages Section -->
     <section id="message" class="min-vh-100 pt-5">
-        <div class="overlay hide" id="overlay">
+        <div class="overlay hide" id="shadow">
             <div class="addmesage">
                 <span onclick="hidingsendingmsg()">x</span>
                 <div class="personsentmessage">
@@ -417,35 +417,29 @@
             <span>+</span>
         </div>
         <div class="messages" id="messages">
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
+            <div class="message" id="message" onclick="showingcontent(this)">
+                <div class="shadowmsg"></div>
+                <div class="notficationinfo hide" id="notficationinfopart">
+                    <ul>
+                        <li onclick="read(havebeenread)">قُرِئت</li>
+                        <li>عرض الحساب</li>
+                        <li onclick="deletemsg(message)">مسح الرساله</li>
+                        <li onclick="block(message)">حظر</li>
+                    </ul>
+                </div>
+                <img src="../imgs/personphoto.avif" class="personphoto" alt="">
                 <h1> أنس</h1>
-                <small>رساله جديده(2)</small>
+                <img src="../imgs/greenarrow-removebg-preview.png" class="incomearrow" alt="">
+                <small id="havebeenread">رساله جديده(2)</small>
                 <span>منذ 5 دقائق</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> أحمد</h1>
-                <small>رساله جديده</small>
-                <span>منذ 15 دقائق</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> محمد</h1>
-                <small style="background-color: rgba(255, 122, 122, 0.434); color: rgb(131, 63, 63);"> تمت قرائتها</small>
-                <span>منذ 55 دقائق</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-            <div class="message">
-                <img src="public/imgs/personphoto.avif" class="personphoto" alt="">
-                <h1> يوسف</h1>
-                <small style="background-color: rgba(255, 122, 122, 0.434); color: rgb(131, 63, 63);"> تمت قرائتها(5)</small>
-                <span>منذ 5 ساعات</span>
-                <img src="public/imgs/dots.png" class="downicon" alt="">
-            </div>
-        </div>          
+                <img src="../imgs/dots.png" class="downicon" onclick="notficationinfo(notficationinfopart)" alt="">
+        </div>
+    </div>
+    <div class="notficationinfoplus hide" id="1">
+        <ul>
+            <li onclick="deletemsgplus(this.id)">مسح الرساله</li>
+        </ul>
+    </div>
     </section>
     <!-- My Trips Section -->
     <section id="trips" class="trips pt-5 min-vh-100 trips">

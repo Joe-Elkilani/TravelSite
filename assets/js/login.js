@@ -8,7 +8,7 @@ function showAlert(message, type = "success") {
         <div class="alert alert-${type}" role="alert">
             ${message}
         </div>
-  `;
+    `;
 
     setTimeout(() => {
         alertBox.innerHTML = "";
