@@ -19,38 +19,39 @@
             <div class="namesandusernamepartwhole">
                 <div class="usernamepart">
                     <Label>اسم المستخدم</Label>
-                    <input type="text" placeholder="من فضلك ادخل اسم المستخدم">
+                    <input type="text" id="username" placeholder="من فضلك ادخل اسم المستخدم">
                 </div>
                 <div class="namespart">
                     <div class="firstnamepart">
                         <Label>الاسم الأول</Label>
-                        <input type="text" placeholder="من فضلك ادخل الاسم الأول الخاص بك">
+                        <input type="text" id="firstName" placeholder="من فضلك ادخل الاسم الأول الخاص بك">
                     </div>
                     <div class="lastnamepasrt">
                         <Label>الاسم الأخير</Label>
-                        <input type="text" placeholder="من فضلك ادخل الاسم الأخير الخاص بك">
+                        <input type="text" id="lastName" placeholder="من فضلك ادخل الاسم الأخير الخاص بك">
                     </div>
                 </div>
             </div>
             <div class="eamilandpasswordpartwhole">
                 <div class="emailpart">
                     <Label>البريد الألكتروني</Label>
-                    <input type="text" placeholder="من فضلك ادخل البريد الألكتروني الخاص بك">
+                    <input type="text" id="useremail" placeholder="من فضلك ادخل البريد الألكتروني الخاص بك">
                 </div>
                 <div class="passwordpart">
                     <Label>كلمة المرور</Label>
-                    <input type="text" placeholder="من فضلك ادخل كلمة المرور الخاص بك">
+                    <input type="text" id="userpassword" placeholder="من فضلك ادخل كلمة المرور الخاص بك">
                 </div>
                 <div class="passwordconfirmationpart">
                     <Label>تأكيد كلمة المرور</Label>
-                    <input type="text" placeholder="من فضلك اعد كتابة كلمة المرور الخاص بك">
+                    <input type="text" id="reuserpassword" placeholder="من فضلك اعد كتابة كلمة المرور الخاص بك">
                 </div>
             </div>
             <div class="alreadyhad">
                 <label>لديك حساب بالفعل ؟<a href="login.html">تسجيل الدخول</a></label>
             </div>
         </div>
-        <button>انشاء حساب</button>
+        <button onclick="signup()">انشاء حساب</button>
+        <div id="alertBox"></div>
     </div>
     <script src="assets/js/signup.js"></script>
 </body>

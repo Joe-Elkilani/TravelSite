@@ -33,8 +33,24 @@ section {
     background: url(../../public/imgs/bg.jpeg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center center;
+    background-position: right bottom;
     background-attachment: fixed;
+    position: relative;
+}
+
+section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100vh;
+    background: url(../../public/imgs/bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    background-attachment: fixed;
+    width: 50%;
+    z-index: 0;
 }
 
 /* SignOut */
@@ -135,6 +151,7 @@ header {
 /* Home styles */
 
 .home .card {
+    z-index: 100;
     color: var(--second-text-color);
 }
 
