@@ -21,7 +21,7 @@ body{
 }
 .form{
     width: 480px;
-    height: 380px;
+    height: 450px;
     background-color: rgb(255, 255, 255);
     border-radius:48px;
     transition: 0.3s;
@@ -121,4 +121,16 @@ button:hover{
 }
 .alreadyhad a{
     color: rgb(0, 0, 0);
+}
+
+.alertBox {
+    background: #58d358;
+    border: 2px solid #0f0;
+    padding: 15px;
+    width: 350px;
+    margin: auto;
+    margin-top: 70px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
 }

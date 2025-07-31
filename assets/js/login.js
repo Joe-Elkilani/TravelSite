@@ -1,7 +1,15 @@
 const nameinput = document.getElementById("nameinput");
 const emailinput = document.getElementById("emailinput");
 const passwordinput = document.getElementById("passwordinput");
+const form = document.getElementsByTagName("form")[0]
 
+if (alertBox.innerHTML == "") {
+    alertBox.style.display = "none";
+    form.style.height = "380px"
+} else {
+    alertBox.style.display = "block";
+    form.style.height = "450px"
+}
 function showAlert(message, type = "success") {
     const alertBox = document.getElementById("alertBox");
     alertBox.innerHTML = `

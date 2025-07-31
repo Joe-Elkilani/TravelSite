@@ -5,6 +5,15 @@ let useremail = document.getElementById("useremail");
 let userpassword = document.getElementById("userpassword");
 let reuserpassword = document.getElementById("reuserpassword");
 
+const form = document.getElementsByTagName("form")[0]
+
+if (alertBox.innerHTML == "") {
+    alertBox.style.display = "none";
+    form.style.height = "560px"
+} else {
+    alertBox.style.display = "block";
+    form.style.height = "650px"
+}
 // Show alert function
 function showAlert(message, type = "success") {
     const alertBox = document.getElementById("alertBox");
